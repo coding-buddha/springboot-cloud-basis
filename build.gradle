@@ -1,0 +1,66 @@
+buildscript {
+    repositories {
+        maven { url 'https://repo.spring.io/milestone' }
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+        classpath("io.spring.gradle:dependency-management-plugin:${springBootManagementVersion}")
+    }
+}
+
+subprojects {
+    group = "edu.pasudo123.study"
+    version = "1.0.0"
+
+    apply plugin: 'java'
+    apply plugin: 'org.springframework.boot'
+    apply plugin: 'io.spring.dependency-management'
+
+    sourceCompatibility = '11'
+
+    dependencies {
+        implementation 'org.springframework.boot:spring-boot-starter-web'
+        implementation 'org.springframework.cloud:spring-cloud-starter-config'
+        implementation 'org.springframework.cloud:spring-cloud-config-server'
+
+//        implementation 'org.springframework.cloud:spring-cloud-bus'
+//        implementation 'org.springframework.cloud:spring-cloud-function-web'
+//        implementation 'org.springframework.cloud:spring-cloud-starter-circuitbreaker-resilience4j'
+//        implementation 'org.springframework.cloud:spring-cloud-starter-consul-config'
+//        implementation 'org.springframework.cloud:spring-cloud-starter-gateway'
+//        implementation 'org.springframework.cloud:spring-cloud-starter-loadbalancer'
+//        implementation 'org.springframework.cloud:spring-cloud-starter-openfeign'
+//        implementation 'org.springframework.cloud:spring-cloud-starter-task'
+//        implementation 'org.springframework.cloud:spring-cloud-starter-zookeeper-config'
+//        implementation 'org.springframework.cloud:spring-cloud-stream'
+//        implementation 'org.springframework.cloud:spring-cloud-starter-vault-config'
+
+        compileOnly 'org.projectlombok:lombok'
+        annotationProcessor 'org.projectlombok:lombok'
+
+        // test
+        testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    }
+
+    dependencyManagement {
+        imports {
+            mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+        }
+    }
+
+    configurations {
+        compileOnly {
+            extendsFrom annotationProcessor
+        }
+    }
+
+    repositories {
+        mavenCentral()
+    }
+
+    test {
+        useJUnitPlatform()
+    }
+}

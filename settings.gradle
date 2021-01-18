@@ -1,0 +1,4 @@
+rootProject.name = 'springboot-cloud-basis'
+include('springboot-cloud-config-client')
+include('springboot-cloud-config-monitor')
+include('springboot-cloud-config-server')
