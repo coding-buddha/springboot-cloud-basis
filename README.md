@@ -6,7 +6,7 @@
 * empty
 
 ### springboot-cloud-config-monitor
-* empty
+* [README](./springboot-cloud-config-client/README.md)
 
 ### springboot-cloud-config-server
 * [README](./springboot-cloud-config-server/README.md)
