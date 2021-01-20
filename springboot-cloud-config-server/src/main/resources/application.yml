@@ -2,8 +2,6 @@ server:
   port: 9111
 
 spring:
-  application:
-    name: buddha-config-server
   profiles:
     active: dev
     include:

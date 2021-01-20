@@ -1,0 +1,5 @@
+### static 정보 획득
+GET http://localhost:9222/static
+
+### dynamic 정보 획득
+GET http://localhost:9222/dynamic

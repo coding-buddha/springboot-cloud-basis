@@ -1,0 +1,20 @@
+server:
+  port: 9222
+
+spring:
+  application:
+    name: buddhaConfig
+  profiles:
+    active: dev
+    include:
+      - override
+
+  cloud:
+    config:
+      uri: http://localhost:9111  # config server 의 uri 를 넣어준다.
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh

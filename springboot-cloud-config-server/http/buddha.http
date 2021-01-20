@@ -1,0 +1,23 @@
+### test : {applicaton-name}/{profile}/{label}
+GET http://localhost:9111/buddhaConfig/test/main
+
+### 다른 방법
+GET http://localhost:9111/main/buddhaConfig-test.yml
+
+
+
+### ------------------------------------------------------------------------------------------------
+### dev : {applicaton-name}/{profile}/{label}
+GET http://localhost:9111/buddhaConfig/dev/main
+
+### 다른 방법
+GET http://localhost:9111/main/buddhaConfig-dev.yml
+
+
+
+### ------------------------------------------------------------------------------------------------
+### prod : {applicaton-name}/{profile}/{label}
+GET http://localhost:9111/buddhaConfig/prod/main
+
+### 다른 방법
+GET http://localhost:9111/main/buddhaConfig-prod.yml
