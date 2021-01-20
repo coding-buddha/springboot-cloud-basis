@@ -13,7 +13,6 @@ spring:
         git:
           uri: https://github.com/coding-buddha/coding-buddha-private
           timeout: 5
-          username: ${git.username:pasudo123}
-          password: ${git.password:}
+          username: ${git.username}
+          password: ${git.password}
           skip-ssl-validation: true
-          force-pull: true

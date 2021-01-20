@@ -5,13 +5,12 @@ spring:
   application:
     name: buddhaConfig
   profiles:
-    active: dev
-    include:
-      - override
-
+    active: prod
   cloud:
     config:
       uri: http://localhost:9111  # config server 의 uri 를 넣어준다.
+      label: main
+
 
 management:
   endpoints:

@@ -18,3 +18,10 @@
 ### /{application}/{profile}[/{label}] 로 호출 시 404 NOT FOUND 문제
 * [Quick Start] 를 살펴보면, label 의 default 값은 `master` 이다. 
 * 따라서 해당 config repository 의 메인 브랜치가 `master` 가 아니라 `main` 이면 명시적으로 값을 작성해줘야 한다.
+
+### org.springframework.cloud:spring-cloud-config-server 의존성 문제
+* spring-cloud-config-client 가 위의 의존성까지 갖고있다면, bootstrap.yml 에서 config server 를 찾지 못한다.
+* config server 나 config client 둘 다 아래의 의존성은 공통으로 갖되, config server 는 config server 에서만 의존성 갖도록 한다.
+    * `implementation org.springframework.boot:spring-boot-starter-actuator`
+    * `implementation org.springframework.cloud:spring-cloud-starter-config`
+        * 해당 의존성 내부에 `org.springframework.cloud:spring-cloud-starter-web` 까지 포함되어 있다. 

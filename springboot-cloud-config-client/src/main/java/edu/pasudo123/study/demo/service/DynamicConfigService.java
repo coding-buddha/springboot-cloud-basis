@@ -4,7 +4,6 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.stereotype.Service;
 
-import javax.annotation.PostConstruct;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -15,18 +14,14 @@ import java.util.concurrent.ConcurrentHashMap;
 @RefreshScope
 public class DynamicConfigService {
 
-    @Value("${buddha.profile:none-profile}") private String profile;
-    @Value("${buddha.comment:none-comment}") private String comment;
+    @Value("${buddha.profile:none}") private String profile;
+    @Value("${buddha.comment:none}") private String comment;
 
     private static final Map<String, Object> STORE = new ConcurrentHashMap<>();
 
-    @PostConstruct
-    public void init() {
+    public Map<String, Object> getConfig() {
         STORE.put("profile", profile);
         STORE.put("comment", comment);
-    }
-
-    public Map<String, Object> getConfig() {
         return STORE;
     }
 }
