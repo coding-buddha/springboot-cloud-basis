@@ -32,3 +32,11 @@
 <div style="border: 1px solid black;">
     <img src="../images/2020_01_22_rabbitm_connections.png" width="600" />
 </div> 
+
+## spring config client 의 retry connection
+* config server 에 문제가 있을 시, client 를 지속적으로 연결요청하도록 수행할 수 있다.
+* bootstrap.yml 파일에 `spring.cloud.config.fail-fast:true` 로 설정해두고 두 개의 의존성을 추가해준다.
+    * `implementation 'org.springframework.boot:spring-boot-starter-aop'`
+    * `implementation 'org.springframework.retry:spring-retry'`
+    * 두 개의 의존성을 추가함으로써, config server 는 실행되지 않은 채로, config client 만 실행되도 지속적으로 connection retry 를 수행한다.
+

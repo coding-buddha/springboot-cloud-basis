@@ -3,6 +3,12 @@ spring:
     config:
       uri: http://localhost:9111  # config server 의 uri 를 넣어준다.
       label: main
+      fail-fast: true             # server 에 연결 실패 시, 바로 종료토록 한다. (retry, aop 설정 필요)
+      retry:                      # retry 설정
+        initial-interval: 3000    # 최초 retry 시간간격
+        max-attempts: 3           # 최대 횟수
+        max-interval: 2000        # retry 시간간격
+
 
 # /actuator/refresh 를 통한 단일 spring cloud client 갱신
 #management:
