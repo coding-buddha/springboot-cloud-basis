@@ -10,3 +10,8 @@
 
 ### springboot-cloud-config-server
 * [README](./springboot-cloud-config-server/README.md)
+
+
+# reference
+* 스프링 클라이드 2.2.6 Ver : https://docs.spring.io/spring-cloud-config/docs/2.2.6.RELEASE/reference/html/
+* https://madplay.github.io/post/spring-cloud-bus-example  

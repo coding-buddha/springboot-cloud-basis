@@ -1,19 +1,12 @@
-server:
-  port: 9222
-
 spring:
-  application:
-    name: buddhaConfig
-  profiles:
-    active: prod
   cloud:
     config:
       uri: http://localhost:9111  # config server 의 uri 를 넣어준다.
       label: main
 
-
-management:
-  endpoints:
-    web:
-      exposure:
-        include: refresh
+# /actuator/refresh 를 통한 단일 spring cloud client 갱신
+#management:
+#  endpoints:
+#    web:
+#      exposure:
+#        include: refresh

@@ -3,3 +3,11 @@ GET http://localhost:9222/static
 
 ### dynamic 정보 획득
 GET http://localhost:9222/dynamic
+
+### spring acuator refresh : 수정된 repo 정보를 갱신한다. (POST)
+# 200
+POST http://localhost:9222/actuator/refresh
+
+### spring acuator refresh : rabbitmq 를 이용, 수정된 repo 정보를 갱신한다. (POST)
+# 204
+POST http://localhost:9222/actuator/bus-refresh

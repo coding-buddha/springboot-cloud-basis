@@ -1,0 +1,11 @@
+version: '3'
+services:
+  rabbitmq_bus_container:
+    image: rabbitmq:3-management-alpine
+    container_name: rabbitmq_bus_container
+    environment:
+      RABBITMQ_DEFAULT_USER: root
+      RABBITMQ_DEFAULT_PASS: rootpass
+    ports:
+      - 5672:5672   # rabbitmq process
+      - 9333:15672  # rabbitmq admin process

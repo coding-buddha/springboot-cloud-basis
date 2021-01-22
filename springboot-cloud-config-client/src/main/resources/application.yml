@@ -1,0 +1,21 @@
+server:
+  port: 9222
+
+spring:
+  application:
+    name: buddhaConfig
+  profiles:
+    active: prod
+  # spring cloud bus : docker-compose.yml 에 설정된 내용
+  # rabbitmq admin 에 대한 정보를 삽입한다.
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: root
+    password: rootpass
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: bus-refresh,refresh
