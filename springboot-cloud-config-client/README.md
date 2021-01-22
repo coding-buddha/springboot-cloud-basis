@@ -24,7 +24,11 @@
 
 ## rabbitmq 와 연결된 spring config client (rabbitmq 는 컨테이너로 올라와있다.)
 ### rabbitmq exchanges 정보
-<img src="../images/2020_01_22_rabbitm_exchanges.png" width="600" style="border: 1px solid black;" />
+<div style="border: 1px solid black;">
+    <img src="../images/2020_01_22_rabbitm_exchanges.png" width="600" />
+</div>
 
 ### rabbitmq connections 정보
-<img src="../images/2020_01_22_rabbitm_connections.png" width="600" style="border: 1px solid black;" /> 
+<div style="border: 1px solid black;">
+    <img src="../images/2020_01_22_rabbitm_connections.png" width="600" />
+</div> 
